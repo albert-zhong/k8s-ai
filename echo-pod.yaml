@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echo-pod
+  namespace: default
+spec:
+  containers:
+  - name: echo-container
+    image: busybox
+    command: ["/bin/sh", "-c", "echo $FOOBAR && sleep 3600"]
+    env:
+    - name: FOOBAR
+      valueFrom:
+        configMapKeyRef:
+          name: example-configmap
+          key: foobar
+

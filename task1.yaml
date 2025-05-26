@@ -1,0 +1,7 @@
+apiVersion: ai.k8s-ai.albertzhong.com/v1alpha1
+kind: Task
+metadata:
+  name: task-sample
+  namespace: default
+spec:
+  prompt: "Create a simple pod that will let me run curl commands when I ssh into it. I'm doing a live demo so don't mess this up!!!"
